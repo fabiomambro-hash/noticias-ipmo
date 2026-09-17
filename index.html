@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Notícias do Instituto de Previdência do Município de Osasco - IPMO" />
+  <title>Notícias IPMO</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header public-header">
+    <div class="container public-header-inner">
+      <div class="brand-stack">
+        <a class="brand brand-light" href="index.html" aria-label="Notícias IPMO - Início">
+          <img src="assets/logo-ipmo-branco.png" alt="IPMO - Instituto de Previdência do Município de Osasco" />
+        </a>
+        <a class="institutional-return" href="https://www.ipmosasco.com.br" target="_blank" rel="noopener">Voltar ao site do IPMO ↗</a>
+      </div>
+      <button class="menu-toggle light-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">☰</button>
+      <nav id="main-nav" class="nav" aria-label="Navegação principal">
+        <a href="#destaque">Destaque</a>
+        <a href="#ultimas">Últimas notícias</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">NOTÍCIAS IPMO</span>
+          <h1>Informação para cuidar do presente e construir o futuro.</h1>
+          <p>Acompanhe as notícias, ações, programas e informações que fazem parte do dia a dia do Instituto.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#ultimas">Ver últimas notícias</a>
+            <a class="btn ghost" href="#categorias">Explorar categorias</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <div class="hero-panel-content">
+            <span>Comunicação institucional</span>
+            <strong>Conteúdo claro, acessível e sempre atualizado.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="destaque">
+      <div class="container"><div class="section-heading"><div><span class="section-kicker">EM DESTAQUE</span><h2>Notícia principal</h2></div></div><div id="featuredMount"><p class="empty-state">Carregando destaque...</p></div></div>
+    </section>
+
+    <section class="section muted" id="ultimas">
+      <div class="container">
+        <div class="section-heading news-heading">
+          <div>
+            <span class="section-kicker">ATUALIZAÇÕES</span>
+            <h2>Últimas notícias</h2>
+          </div>
+          <label class="search" aria-label="Buscar notícias">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Buscar notícia..." />
+          </label>
+        </div>
+
+        <div class="news-grid" id="newsGrid"><p class="empty-state">Carregando notícias...</p></div>
+
+        <p class="empty-state" id="emptyState" hidden>Nenhuma notícia encontrada para essa busca.</p>
+      </div>
+    </section>
+
+    <section class="section" id="categorias">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">ENCONTRE MAIS RÁPIDO</span>
+            <h2>Navegue por categorias</h2>
+          </div>
+        </div>
+        <div class="category-grid">
+          <button class="category" data-filter="institucional">Institucional</button>
+          <button class="category" data-filter="educacao-previdenciaria">Educação Previdenciária</button>
+          <button class="category" data-filter="aposentados-e-pensionistas">Aposentados e Pensionistas</button>
+          <button class="category" data-filter="servidores">Servidores</button>
+          <button class="category" data-filter="eventos">Eventos</button>
+          <button class="category" data-filter="conselhos">Conselhos</button>
+          <button class="category" data-filter="passos-para-o-futuro">Passos para o Futuro</button>
+          <button class="category" data-filter="comunicados">Comunicados</button>
+          <button class="category clear" data-filter="all">Mostrar todas</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="container cta-grid">
+        <div>
+          <span class="section-kicker light">NOTÍCIAS IPMO</span>
+          <h2>Informação pública, clara e acessível.</h2>
+          <p>Esta página foi pensada para concentrar notícias e conteúdos institucionais em um ambiente independente e fácil de atualizar.</p>
+        </div>
+        <a class="btn light-btn" href="https://www.ipmosasco.com.br" target="_blank" rel="noopener">Acessar o site do IPMO</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/logo-ipmo.png" alt="IPMO" class="footer-logo" />
+      </div>
+      <div>
+        <strong>Notícias IPMO</strong>
+        <p>Instituto de Previdência do Município de Osasco</p>
+      </div>
+      <div class="footer-links">
+        <a href="#ultimas">Notícias</a>
+        <a href="#categorias">Categorias</a>
+        <a href="https://www.ipmosasco.com.br" target="_blank" rel="noopener">Site institucional</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="supabase-client.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
