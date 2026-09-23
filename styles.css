@@ -94,3 +94,60 @@ button,input{font:inherit}
   .hero-panel-content{left:26px;right:26px;bottom:26px}
   .hero-panel-content strong{font-size:24px}
 }
+
+
+/* Refinamento final — mobile, cards e rodapé */
+.featured-card.no-cover{grid-template-columns:1fr;max-width:860px}
+.featured-card.no-cover .featured-content{min-height:0;padding:36px 40px}
+.news-card:not(:has(.card-media)) .card-body{padding-top:24px}
+.footer-dark{background:var(--navy);border-top:0;color:#fff;padding:32px 0}
+.footer-dark .footer-logo{width:180px;max-width:100%;display:block}
+.footer-dark p{color:#c9dbe8}
+.footer-dark .footer-links{color:#fff}
+.footer-dark .footer-links a{opacity:.9}
+.footer-dark .footer-links a:hover{opacity:1;color:#8fdcf5}
+.article-content{overflow-wrap:anywhere}
+
+@media(max-width:900px){
+  .featured-card.no-cover{max-width:none}
+  .featured-content{padding:30px}
+  .featured-media{min-height:230px}
+  .card-media{min-height:190px}
+}
+
+@media(max-width:600px){
+  .public-header{position:sticky;top:0}
+  .public-header-inner{min-height:68px;gap:12px}
+  .brand-light img{width:162px;max-width:62vw}
+  .institutional-return{font-size:10px;margin-top:1px;line-height:1.2}
+  .menu-toggle{font-size:26px;padding:8px;margin-right:-6px}
+  .public-header .nav{top:66px}
+  .hero-grid{padding:30px 0 34px;gap:24px}
+  .hero h1{font-size:clamp(33px,9.4vw,40px)}
+  .hero p{font-size:16px;line-height:1.55}
+  .hero-panel{min-height:185px}
+  .hero-panel-content{left:22px;right:22px;bottom:22px}
+  .hero-panel-content strong{font-size:22px}
+  .section{padding:44px 0}
+  .section-heading{margin-bottom:22px}
+  .section-heading h2{font-size:32px}
+  .featured-media{min-height:210px}
+  .featured-content,.featured-card.no-cover .featured-content{padding:24px}
+  .featured-content h3{font-size:27px;margin:12px 0}
+  .featured-content p{font-size:16px}
+  .card-media{min-height:185px}
+  .card-body{padding:20px}
+  .news-card:not(:has(.card-media)) .card-body{padding-top:20px}
+  .news-card{border-radius:16px}
+  .cta{padding:44px 0}
+  .cta h2{font-size:31px;line-height:1.12}
+  .footer-dark{padding:30px 0}
+  .footer-grid{gap:18px}
+  .footer-dark .footer-logo{width:165px}
+  .footer-links{gap:14px;font-size:13px}
+  .article-page{padding:38px 0 60px}
+  .article-shell h1{font-size:32px;line-height:1.08}
+  .article-lead{font-size:18px}
+  .article-photo{margin:24px 0;max-height:360px;border-radius:16px}
+  .article-content{font-size:17px}
+}

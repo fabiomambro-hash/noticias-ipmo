@@ -12,13 +12,13 @@ const categoryButtons = [...document.querySelectorAll('.category')];
 
 function esc(s=''){return String(s).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));}
 function fmtDate(v){if(!v)return ''; return new Intl.DateTimeFormat('pt-BR',{day:'2-digit',month:'long',year:'numeric'}).format(new Date(v));}
-function image(post, cls='card-media'){return post.cover_image_url ? `<div class="${cls}" style="background-image:linear-gradient(0deg,rgba(3,35,59,.25),rgba(3,35,59,.1)),url('${esc(post.cover_image_url)}');background-size:cover;background-position:center"></div>` : `<div class="${cls}"><span>${esc(post.categories?.name||'Notícias IPMO')}</span></div>`;}
+function image(post, cls='card-media'){return post.cover_image_url ? `<div class="${cls}" style="background-image:linear-gradient(0deg,rgba(3,35,59,.18),rgba(3,35,59,.05)),url('${esc(post.cover_image_url)}');background-size:cover;background-position:center"></div>` : '';}
 function articleUrl(post){return `noticia.html?slug=${encodeURIComponent(post.slug)}`;}
 
 function renderFeatured(){
   const p = state.posts.find(x=>x.is_featured) || state.posts[0];
   if(!featured){return;} if(!p){featured.innerHTML='<div class="empty-state">Ainda não há notícia em destaque.</div>';return;}
-  featured.innerHTML=`<article class="featured-card">${image(p,'featured-media')}<div class="featured-content"><span class="badge">${esc(p.categories?.name||'Institucional')}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt||'')}</p><div class="meta">${fmtDate(p.published_at||p.created_at)}</div><a class="text-link" href="${articleUrl(p)}">Ler matéria completa →</a></div></article>`;
+  featured.innerHTML=`<article class="featured-card ${p.cover_image_url?'':'no-cover'}">${image(p,'featured-media')}<div class="featured-content"><span class="badge">${esc(p.categories?.name||'Institucional')}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt||'')}</p><div class="meta">${fmtDate(p.published_at||p.created_at)}</div><a class="text-link" href="${articleUrl(p)}">Ler matéria completa →</a></div></article>`;
 }
 function renderPosts(){
   const term=(searchInput?.value||'').trim().toLowerCase();
