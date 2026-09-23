@@ -151,3 +151,60 @@ button,input{font:inherit}
   .article-photo{margin:24px 0;max-height:360px;border-radius:16px}
   .article-content{font-size:17px}
 }
+
+
+/* Refinamento desktop — preserva tablet e mobile */
+@media(min-width:901px){
+  /* Hero mais compacto para trazer o conteúdo editorial para a primeira dobra */
+  .hero-grid{
+    min-height:420px;
+    padding:48px 0;
+    gap:62px;
+  }
+  .hero-panel{min-height:300px}
+
+  /* Ritmo vertical mais editorial */
+  .section{padding:58px 0}
+  .section-heading{margin-bottom:24px}
+
+  /* Destaque: 55/45 com foto; compacto quando não houver capa */
+  .featured-card{
+    grid-template-columns:1.1fr .9fr;
+  }
+  .featured-media{min-height:340px}
+  .featured-content{padding:38px 42px}
+  .featured-card.no-cover{
+    display:block;
+    max-width:920px;
+  }
+  .featured-card.no-cover .featured-content{
+    padding:34px 40px;
+  }
+
+  /* Últimas notícias: três colunas em telas largas */
+  .news-heading{
+    align-items:flex-end;
+    margin-bottom:26px;
+  }
+  .search{
+    width:300px;
+    min-width:300px;
+  }
+  .news-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:22px;
+  }
+  .card-media{min-height:190px}
+  .card-body{padding:22px}
+  .card-body h3{font-size:21px}
+
+  /* Categorias permanecem em quatro colunas, com altura um pouco menor */
+  .category{min-height:72px}
+
+  /* Faixa institucional mais enxuta no desktop */
+  .cta{padding:46px 0}
+  .cta h2{font-size:34px}
+
+  /* Rodapé compacto e equilibrado */
+  .footer-dark{padding:28px 0}
+}
