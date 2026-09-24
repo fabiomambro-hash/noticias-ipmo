@@ -208,3 +208,78 @@ button,input{font:inherit}
   /* Rodapé compacto e equilibrado */
   .footer-dark{padding:28px 0}
 }
+
+/* Refinamento desktop v2 — cabeçalho, hero e destaque editorial */
+@media(min-width:901px){
+  /* Cabeçalho com mais presença sem ficar pesado */
+  .public-header-inner{
+    min-height:102px;
+    gap:34px;
+  }
+  .brand-stack{gap:26px}
+  .brand-light img{
+    width:270px;
+    max-width:none;
+  }
+  .institutional-return{
+    font-size:13px;
+    letter-spacing:.01em;
+  }
+  .public-header .nav{
+    gap:30px;
+    font-size:15px;
+  }
+
+  /* Hero mais coeso em telas largas */
+  .hero-grid{
+    min-height:410px;
+    grid-template-columns:1.08fr .92fr;
+    gap:44px;
+    padding:44px 0 46px;
+  }
+  .hero h1{
+    font-size:clamp(48px,4.15vw,62px);
+    max-width:690px;
+  }
+  .hero p{
+    max-width:620px;
+    margin-top:20px;
+  }
+  .hero-actions{margin-top:25px}
+  .hero-panel{
+    min-height:292px;
+    border-radius:28px;
+  }
+
+  /* Destaque editorial: imagem dominante + texto; compacto sem capa */
+  .featured-card:not(.no-cover){
+    grid-template-columns:1.12fr .88fr;
+    min-height:360px;
+  }
+  .featured-card:not(.no-cover) .featured-media{
+    min-height:360px;
+  }
+  .featured-card:not(.no-cover) .featured-content{
+    padding:38px 40px;
+  }
+  .featured-card.no-cover{
+    max-width:900px;
+  }
+  .featured-card.no-cover .featured-content{
+    padding:32px 38px;
+  }
+  .featured-content h3{
+    font-size:32px;
+    line-height:1.1;
+  }
+
+  /* Pequenos ajustes de ritmo para a leitura no desktop */
+  .section{padding:54px 0}
+  .section-heading{margin-bottom:22px}
+  .news-heading{margin-bottom:24px}
+  .cta{padding:42px 0}
+}
+
+@media(min-width:1300px){
+  .container{width:min(1220px,calc(100% - 56px))}
+}
