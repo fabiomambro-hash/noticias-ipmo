@@ -283,3 +283,77 @@ button,input{font:inherit}
 @media(min-width:1300px){
   .container{width:min(1220px,calc(100% - 56px))}
 }
+
+/* Desktop v3 — primeira dobra mais editorial e hero mais discreto */
+@media(min-width:901px){
+  /* Cabeçalho: mantém presença, mas devolve respiro vertical ao logo */
+  .public-header-inner{
+    min-height:88px;
+  }
+  .brand-light img{
+    width:244px;
+  }
+  .public-header .nav{
+    gap:28px;
+    font-size:14px;
+  }
+
+  /* Hero reduzido para que o destaque editorial já apareça na primeira dobra */
+  .hero-grid{
+    min-height:330px;
+    grid-template-columns:1.12fr .88fr;
+    gap:38px;
+    padding:30px 0 32px;
+  }
+  .hero h1{
+    font-size:clamp(43px,3.55vw,54px);
+    line-height:1.04;
+    max-width:760px;
+  }
+  .hero p{
+    max-width:650px;
+    margin-top:15px;
+    font-size:17px;
+    line-height:1.5;
+  }
+  .hero-actions{
+    margin-top:19px;
+  }
+  .hero-actions .btn{
+    padding:11px 17px;
+  }
+  .hero-panel{
+    min-height:232px;
+    border-radius:26px;
+  }
+  .hero-panel-content{
+    left:30px;
+    right:30px;
+    bottom:27px;
+  }
+  .hero-panel-content strong{
+    font-size:25px;
+    line-height:1.12;
+  }
+
+  /* Aproxima a notícia principal do hero */
+  #destaque.section,
+  .section:first-of-type{
+    padding-top:38px;
+  }
+  .section-heading{
+    margin-bottom:18px;
+  }
+  .section-heading h2{
+    line-height:1.08;
+  }
+
+  /* Card sem capa um pouco mais enxuto enquanto preserva leitura */
+  .featured-card.no-cover .featured-content{
+    padding:28px 36px;
+  }
+}
+
+@media(min-width:1300px){
+  .hero-grid{min-height:338px}
+}
