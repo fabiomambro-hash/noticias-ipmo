@@ -588,3 +588,79 @@ button,input{font:inherit}
   }
 
 }
+
+/* =========================================================
+   ETIQUETAS — CONTEÚDO CADASTRADO
+   ========================================================= */
+
+.post-row-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.post-row-meta span {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #e8f5fb;
+  color: #0877a9;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Status */
+.post-row-meta span:nth-child(2) {
+  background: #eaf6ee;
+  color: #24733c;
+}
+
+/* Destaque */
+.post-row-meta span:nth-child(3) {
+  background: #fff5d9;
+  color: #8a6300;
+}
+
+/* Título */
+.post-row-title {
+  display: block;
+  margin-top: 8px;
+  color: #07375c;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Organização de cada notícia */
+.post-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* Área dos botões */
+.post-row-actions {
+  display: flex;
+  gap: 7px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+@media (max-width: 700px) {
+
+  .post-row {
+    flex-direction: column;
+  }
+
+  .post-row-actions {
+    width: 100%;
+    padding-top: 4px;
+  }
+
+}
