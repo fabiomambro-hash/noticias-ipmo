@@ -664,3 +664,31 @@ button,input{font:inherit}
   }
 
 }
+
+/* =========================================
+   ATALHOS DO PORTAL
+========================================= */
+
+.portal-shortcuts {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.editorial-access {
+  padding-left: 18px;
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 760px) {
+  .portal-shortcuts {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .editorial-access {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
