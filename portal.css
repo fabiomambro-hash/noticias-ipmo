@@ -66,3 +66,14 @@
 @media(max-width:850px){.portal-feature-layout,.portal-columns{grid-template-columns:1fr}.portal-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.portal-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:15px}.portal-sidebar section{margin:0}.portal-actions{flex-direction:column;align-items:flex-end;gap:4px}}
 @media(max-width:600px){.portal-brand{padding:13px 0}.portal-brand img{width:110px;max-width:28vw}.portal-name{padding-left:10px}.portal-name strong{font-size:23px}.portal-name span{font-size:9px}.portal-actions{font-size:11px}.portal-actions a:first-child{display:none}.portal-nav .container{display:block;min-height:0}.portal-menu{display:block}.portal-nav-links{display:none;flex-direction:column;align-items:flex-start;gap:0;padding-bottom:10px}.portal-nav-links.open{display:flex}.portal-nav-links a{padding:10px 4px}.portal-feature-layout{gap:12px}.portal-lead{min-height:330px}.portal-lead-content{padding:20px}.portal-side{grid-template-columns:1fr}.portal-side-story{min-height:130px}.portal-page .news-grid,.portal-sidebar{grid-template-columns:1fr}.portal-main{padding-top:22px}.portal-section-title h2{font-size:21px}}
 @media(min-width:601px){.portal-nav-links{display:flex;gap:26px;align-items:center}}
+
+/* Cabeçalho institucional do Notícias IPMO */
+.portal-page .portal-header {
+  background: #082f54;
+}
+
+.portal-page .portal-name strong,
+.portal-page .portal-name span,
+.portal-page .portal-actions a {
+  color: #ffffff;
+}
