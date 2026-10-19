@@ -77,3 +77,21 @@
 .portal-page .portal-actions a {
   color: #ffffff;
 }
+
+/* Correção do logotipo oficial do IPMO na página inicial */
+
+.portal-page .portal-brand > a:first-child {
+  background-color: #082f54;
+  padding: 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-page .portal-brand > a:first-child img {
+  display: block;
+  width: 165px;
+  max-width: 100%;
+  height: auto;
+}
