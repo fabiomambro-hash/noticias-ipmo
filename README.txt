@@ -14,3 +14,5 @@ Como testar:
 3. Clique em “Ler mais” para abrir as páginas internas.
 
 Esta versão é front-end e está pronta para a próxima etapa: ligação com Supabase e publicação na Vercel.
+
+Teste de integração automática GitHub + Vercel — Notícias IPMO.

@@ -1,0 +1,97 @@
+/* Layout exclusivo da home do Notícias IPMO; não altera admin.html nem noticia.html. */
+.portal-page{background:#f3f6f9;color:#18344c}
+.portal-page .container{width:min(1200px,calc(100% - 32px))}
+.portal-top{background:#062f54;color:#dcecf6;font-size:12px;padding:8px 0}
+.portal-top .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.portal-header{background:#fff;border-bottom:1px solid #dce6ed}
+.portal-brand{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px 0}
+.portal-brand img{width:165px;max-width:36vw;height:auto}
+.portal-name{flex:1;border-left:1px solid #dbe6ed;padding-left:20px}
+.portal-name strong{display:block;color:#062f54;font-size:clamp(25px,4vw,42px);font-weight:900;line-height:1}
+.portal-name span{display:block;color:#5b7384;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:7px}
+.portal-actions{display:flex;gap:14px;align-items:center;font-size:13px;font-weight:700;color:#075481}
+.portal-actions a:hover{text-decoration:underline}
+.portal-nav{background:#07395f;color:#fff}
+.portal-nav .container{display:flex;align-items:center;gap:26px;min-height:48px}
+.portal-nav a{font-size:13px;font-weight:800;white-space:nowrap}
+.portal-nav a:hover{color:#81d8f4}
+.portal-menu{display:none;border:0;background:transparent;color:#fff;font-size:26px;padding:8px;cursor:pointer}
+.portal-ticker{background:#e5f3fa;border-bottom:1px solid #cce5f1}
+.portal-ticker .container{display:flex;align-items:center;gap:14px;min-height:43px}
+.portal-ticker strong{background:#00a9df;color:#052f50;padding:5px 10px;font-size:11px;font-weight:900;white-space:nowrap}
+.portal-ticker a{font-size:13px;font-weight:700;color:#0b4166;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.portal-main{padding:32px 0 60px}
+.portal-section-title{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:2px solid #d7e3ec;padding-bottom:11px;margin:0 0 20px}
+.portal-section-title h2{margin:0;font-size:23px;line-height:1.15;color:#062f54}
+.portal-section-title small{color:#6b8293;font-weight:700}
+.portal-feature-layout{display:grid;grid-template-columns:1.65fr 1fr;gap:18px;margin-bottom:38px}
+.portal-lead{position:relative;display:flex;align-items:flex-end;min-height:390px;background:linear-gradient(145deg,#093b62,#078cbe);border-radius:12px;overflow:hidden;color:#fff}
+.portal-lead-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.portal-lead:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,27,47,.96),rgba(0,30,50,.06) 85%)}
+.portal-lead-content{position:relative;z-index:1;padding:28px;pointer-events:none}
+.portal-lead h3{font-size:clamp(25px,3vw,38px);line-height:1.1;margin:12px 0}
+.portal-lead p{margin:0 0 12px;color:#e2edf4;font-size:14px}
+.portal-lead .badge{background:#00a9df;color:#052d4c}
+.portal-lead a.stretched{position:absolute;inset:0;z-index:2}
+.portal-side{display:grid;grid-template-rows:1fr 1fr;gap:16px}
+.portal-side-story{display:grid;grid-template-columns:42% 1fr;min-height:185px;background:#fff;border:1px solid #dce6ed;border-radius:12px;overflow:hidden}
+.portal-side-image{width:100%;height:100%;min-height:170px;object-fit:cover}
+.portal-image-fallback{background:linear-gradient(135deg,#0a527b,#12a3d1)}
+.portal-side-content{padding:16px}
+.portal-side-content h3{font-size:17px;line-height:1.25;margin:8px 0}
+.portal-side-content a:hover,.portal-page .news-card a:hover{text-decoration:underline}
+.portal-columns{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:26px}
+.portal-page .news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}
+.portal-page .news-card{border-radius:11px;box-shadow:none}
+.portal-card-image{display:block;height:175px;overflow:hidden;background:#0b527c}
+.portal-page .card-media{display:block;width:100%;height:175px;min-height:175px;padding:0;object-fit:cover}
+.portal-page .card-body{padding:17px}
+.portal-page .card-body h3{font-size:19px;line-height:1.22}
+.portal-page .card-body p{font-size:13px;line-height:1.5}
+.portal-page .text-link{margin-top:12px}
+.portal-search-label{display:block;font-size:13px;font-weight:700;color:#244f6d;margin-bottom:6px}
+.portal-search{width:100%;border:1px solid #d5e2ec;background:#fff;padding:11px 13px;border-radius:9px;margin-bottom:17px}
+.portal-sidebar section{background:#fff;border:1px solid #dce6ed;border-radius:11px;padding:20px;margin-bottom:18px}
+.portal-sidebar h3{margin:0 0 15px;font-size:18px;color:#07395f;border-bottom:2px solid #00a9df;padding-bottom:10px}
+.portal-sidebar .category-grid{display:flex;flex-direction:column;gap:7px}
+.portal-sidebar .category{min-height:0;text-align:left;border:0;border-radius:6px;padding:8px 10px;background:#f3f8fb;font-size:13px}
+.portal-service{display:block;background:#e6f5fb;border-left:4px solid #00a9df;padding:12px;margin-bottom:10px;border-radius:5px;color:#07395f;font-weight:800;font-size:13px}
+.portal-service span{display:block;font-size:12px;font-weight:400;margin-top:3px;color:#537083}
+.portal-more{display:block;margin:24px auto 0;border:1px solid #0d81b5;background:#fff;color:#0a5c84;padding:11px 22px;border-radius:9px;font-weight:800;cursor:pointer}
+.portal-more[hidden],.portal-page [hidden]{display:none!important}
+.portal-footer{background:#062f54;color:#e8f2f8;padding:30px 0}
+.portal-footer .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.portal-footer p{font-size:13px}
+.portal-page .empty-state{background:#fff;border-radius:10px}
+@media(max-width:850px){.portal-feature-layout,.portal-columns{grid-template-columns:1fr}.portal-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.portal-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:15px}.portal-sidebar section{margin:0}.portal-actions{flex-direction:column;align-items:flex-end;gap:4px}}
+@media(max-width:600px){.portal-brand{padding:13px 0}.portal-brand img{width:110px;max-width:28vw}.portal-name{padding-left:10px}.portal-name strong{font-size:23px}.portal-name span{font-size:9px}.portal-actions{font-size:11px}.portal-actions a:first-child{display:none}.portal-nav .container{display:block;min-height:0}.portal-menu{display:block}.portal-nav-links{display:none;flex-direction:column;align-items:flex-start;gap:0;padding-bottom:10px}.portal-nav-links.open{display:flex}.portal-nav-links a{padding:10px 4px}.portal-feature-layout{gap:12px}.portal-lead{min-height:330px}.portal-lead-content{padding:20px}.portal-side{grid-template-columns:1fr}.portal-side-story{min-height:130px}.portal-page .news-grid,.portal-sidebar{grid-template-columns:1fr}.portal-main{padding-top:22px}.portal-section-title h2{font-size:21px}}
+@media(min-width:601px){.portal-nav-links{display:flex;gap:26px;align-items:center}}
+
+/* Cabeçalho institucional do Notícias IPMO */
+.portal-page .portal-header {
+  background: #082f54;
+}
+
+.portal-page .portal-name strong,
+.portal-page .portal-name span,
+.portal-page .portal-actions a {
+  color: #ffffff;
+}
+
+/* Correção do logotipo oficial do IPMO na página inicial */
+
+.portal-page .portal-brand > a:first-child {
+  background-color: #082f54;
+  padding: 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-page .portal-brand > a:first-child img {
+  display: block;
+  width: 165px;
+  max-width: 100%;
+  height: auto;
+}
