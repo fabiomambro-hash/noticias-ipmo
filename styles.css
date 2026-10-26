@@ -692,3 +692,12 @@ button,input{font:inherit}
     border-left: 0;
   }
 }
+
+/* Noticias IPMO - ajuste do logotipo no celular */
+@media (max-width: 600px) {
+  .public-header .brand-light img {
+    width: 170px;
+    max-width: 66vw;
+    height: auto;
+  }
+}
