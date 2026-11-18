@@ -147,17 +147,18 @@
 /* NOTÍCIAS IPMO — Destaques jornalísticos */
 
 #featuredLayout {
-  align-items: stretch;
+  align-items: start;
 }
 
 #featuredMount,
 #secondaryFeaturedMount {
-  height: 100%;
+  height: auto;
 }
+
 
 /* Notícia principal */
 #featuredMount .featured-card {
-  height: 100%;
+  height: auto;
   overflow: hidden;
   border-radius: 14px;
   background: #ffffff;
@@ -247,7 +248,8 @@
 }
 
 #featuredMount .featured-media {
-  height: 340px;
+  height: 100%;
+  min-height: 300px;
 }
 
 #secondaryFeaturedMount .card-media {
