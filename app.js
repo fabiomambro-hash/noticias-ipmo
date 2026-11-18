@@ -1,9 +1,9 @@
 const sb = window.ipmoSupabase;
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
-if (menuToggle) menuToggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));});
 
-const state = { posts: [], category: 'all' };
+
+
+const state = { posts: [], category: 'all', limit: 12 };
+
 const grid = document.querySelector('#newsGrid');
 const featured = document.querySelector('#featuredMount');
 const searchInput = document.querySelector('#searchInput');
@@ -20,21 +20,69 @@ function renderFeatured(){
   if(!featured){return;} if(!p){featured.innerHTML='<div class="empty-state">Ainda não há notícia em destaque.</div>';return;}
   featured.innerHTML=`<article class="featured-card ${p.cover_image_url?'':'no-cover'}">${image(p,'featured-media')}<div class="featured-content"><span class="badge">${esc(p.categories?.name||'Institucional')}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt||'')}</p><div class="meta">${fmtDate(p.published_at||p.created_at)}</div><a class="text-link" href="${articleUrl(p)}">Ler matéria completa →</a></div></article>`;
 }
-function renderPosts(){
-  const term=(searchInput?.value||'').trim().toLowerCase();
-  const items=state.posts.filter(p=>{
-    const text=`${p.title} ${p.excerpt||''} ${p.categories?.name||''}`.toLowerCase();
-    const cat=p.categories?.slug||'';
-    return (!term||text.includes(term)) && (state.category==='all'||cat===state.category);
-  }).filter((_,i)=>i<12);
-  if(grid) grid.innerHTML=items.map(p=>`<article class="news-card">${image(p)}<div class="card-body"><span class="badge">${esc(p.categories?.name||'Notícia')}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt||'')}</p><div class="meta">${fmtDate(p.published_at||p.created_at)}</div><a class="text-link" href="${articleUrl(p)}">Ler mais →</a></div></article>`).join('');
-  if(emptyState) emptyState.hidden=items.length!==0;
+
+function renderPosts() {
+  const term = (searchInput?.value || '').trim().toLowerCase();
+
+  const items = state.posts.filter(p => {
+    const text = `${p.title} ${p.excerpt || ''} ${p.categories?.name || ''}`.toLowerCase();
+    const cat = p.categories?.slug || '';
+    return (!term || text.includes(term)) &&
+      (state.category === 'all' || cat === state.category);
+  });
+
+  const visible = items.slice(0, state.limit);
+
+  if (grid) {
+    grid.innerHTML = visible.map(p => `
+      <article class="news-card">
+        ${image(p)}
+        <div class="card-body">
+          <span class="category-label">${esc(p.categories?.name || 'Notícias')}</span>
+          <h3><a href="${articleUrl(p)}">${esc(p.title)}</a></h3>
+          <p>${esc(p.excerpt || '')}</p>
+          <a class="read-more" href="${articleUrl(p)}">Ler notícia</a>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  if (emptyState) {
+    emptyState.hidden = items.length !== 0;
+  }
+
+  const loadMore = document.querySelector('#loadMore');
+
+  if (loadMore) {
+    loadMore.hidden = items.length <= state.limit;
+  }
 }
+
 async function load(){
   const {data,error}=await sb.from('posts').select('id,title,slug,excerpt,content,cover_image_url,status,is_featured,published_at,created_at,categories(name,slug)').eq('status','published').order('published_at',{ascending:false,nullsFirst:false});
   if(error){console.error(error); if(grid)grid.innerHTML='<p class="empty-state">Não foi possível carregar as notícias agora. Tente novamente em instantes.</p>'; return;}
   state.posts=data||[]; renderFeatured(); renderPosts();
 }
-searchInput?.addEventListener('input',renderPosts);
-categoryButtons.forEach(btn=>btn.addEventListener('click',()=>{state.category=btn.dataset.filter;categoryButtons.forEach(b=>b.classList.toggle('active',b===btn));document.querySelector('#ultimas')?.scrollIntoView({behavior:'smooth'});renderPosts();}));
+
+searchInput?.addEventListener('input', () => {
+  state.limit = 12;
+  renderPosts();
+});
+
+categoryButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    state.category = btn.dataset.filter;
+    state.limit = 12;
+    renderPosts();
+  });
+});
+
+const loadMoreButton = document.querySelector('#loadMore');
+
+loadMoreButton?.addEventListener('click', () => {
+  state.limit += 12;
+  renderPosts();
+});
+
 load();
+
