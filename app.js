@@ -64,7 +64,30 @@ function renderFeatured() {
 function renderPosts() {
   const term = (searchInput?.value || '').trim().toLowerCase();
 
+
+const primary = state.posts.find(p => p.is_featured) || state.posts[0];
+
+const featuredIds = new Set();
+
+if (primary) {
+  featuredIds.add(primary.id);
+
+  state.posts
+    .filter(p => p.id !== primary.id)
+    .slice(0, 2)
+    .forEach(p => featuredIds.add(p.id));
+}
+
+const showAll = term !== '' || state.category !== 'all';
+
+
+
+
   const items = state.posts.filter(p => {
+
+if (!showAll && featuredIds.has(p.id)) return false;
+
+
     const text = `${p.title} ${p.excerpt || ''} ${p.categories?.name || ''}`.toLowerCase();
     const cat = p.categories?.slug || '';
     return (!term || text.includes(term)) &&
