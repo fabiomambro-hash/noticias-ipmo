@@ -15,11 +15,51 @@ function fmtDate(v){if(!v)return ''; return new Intl.DateTimeFormat('pt-BR',{day
 function image(post, cls='card-media'){return post.cover_image_url ? `<div class="${cls}" style="background-image:linear-gradient(0deg,rgba(3,35,59,.18),rgba(3,35,59,.05)),url('${esc(post.cover_image_url)}');background-size:cover;background-position:center"></div>` : '';}
 function articleUrl(post){return `noticia.html?slug=${encodeURIComponent(post.slug)}`;}
 
-function renderFeatured(){
-  const p = state.posts.find(x=>x.is_featured) || state.posts[0];
-  if(!featured){return;} if(!p){featured.innerHTML='<div class="empty-state">Ainda não há notícia em destaque.</div>';return;}
-  featured.innerHTML=`<article class="featured-card ${p.cover_image_url?'':'no-cover'}">${image(p,'featured-media')}<div class="featured-content"><span class="badge">${esc(p.categories?.name||'Institucional')}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt||'')}</p><div class="meta">${fmtDate(p.published_at||p.created_at)}</div><a class="text-link" href="${articleUrl(p)}">Ler matéria completa →</a></div></article>`;
+
+function renderFeatured() {
+  const primary = state.posts.find(p => p.is_featured) || state.posts[0];
+
+  const secondaryMount = document.querySelector('#secondaryFeaturedMount');
+
+  if (!primary) {
+    if (featured) {
+      featured.innerHTML = '<p class="empty-state">Ainda não há notícias em destaque.</p>';
+    }
+    if (secondaryMount) secondaryMount.innerHTML = '';
+    return;
+  }
+
+  if (featured) {
+    featured.innerHTML = `
+      <article class="featured-card ${primary.cover_image_url ? '' : 'no-cover'}">
+        ${image(primary, 'featured-media')}
+        <div class="featured-content">
+          <span class="category-label">${esc(primary.categories?.name || 'Notícias')}</span>
+          <h3><a href="${articleUrl(primary)}">${esc(primary.title)}</a></h3>
+          <p>${esc(primary.excerpt || '')}</p>
+          <a class="read-more" href="${articleUrl(primary)}">Ler notícia</a>
+        </div>
+      </article>
+    `;
+  }
+
+  const secondary = state.posts
+    .filter(p => p.id !== primary.id)
+    .slice(0, 2);
+
+  if (secondaryMount) {
+    secondaryMount.innerHTML = secondary.map(p => `
+      <article class="portal-news-card">
+        ${image(p)}
+        <div class="card-body">
+          <span class="category-label">${esc(p.categories?.name || 'Notícias')}</span>
+          <h3><a href="${articleUrl(p)}">${esc(p.title)}</a></h3>
+        </div>
+      </article>
+    `).join('');
+  }
 }
+
 
 function renderPosts() {
   const term = (searchInput?.value || '').trim().toLowerCase();

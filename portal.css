@@ -142,3 +142,124 @@
     height: 190px;
   }
 }
+
+
+/* NOTÍCIAS IPMO — Destaques jornalísticos */
+
+#featuredLayout {
+  align-items: stretch;
+}
+
+#featuredMount,
+#secondaryFeaturedMount {
+  height: 100%;
+}
+
+/* Notícia principal */
+#featuredMount .featured-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #dce7ef;
+  box-shadow: 0 8px 24px rgba(6, 47, 84, 0.08);
+}
+
+#featuredMount .featured-media {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+#featuredMount .featured-content {
+  padding: 26px;
+}
+
+#featuredMount h3 {
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+#featuredMount h3 a,
+#secondaryFeaturedMount h3 a {
+  color: #062f54;
+  text-decoration: none;
+}
+
+#featuredMount h3 a:hover,
+#secondaryFeaturedMount h3 a:hover {
+  color: #0876ac;
+}
+
+/* Duas notícias secundárias */
+#secondaryFeaturedMount {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+#secondaryFeaturedMount .portal-news-card {
+  display: flex;
+  flex-direction: column;
+}
+
+#secondaryFeaturedMount .card-media {
+  height: 145px;
+  object-fit: cover;
+}
+
+#secondaryFeaturedMount .card-body {
+  padding: 16px;
+}
+
+#secondaryFeaturedMount h3 {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+/* Celulares e tablets */
+@media (max-width: 991.98px) {
+  #featuredMount .featured-media {
+    height: 260px;
+  }
+
+  #featuredMount h3 {
+    font-size: 23px;
+  }
+
+  #secondaryFeaturedMount {
+    grid-template-rows: auto;
+  }
+
+  #secondaryFeaturedMount .card-media {
+    height: 200px;
+  }
+}
+
+/* Ajuste para imagens geradas como background */
+
+#featuredMount .featured-media,
+#secondaryFeaturedMount .card-media {
+  display: block;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#featuredMount .featured-media {
+  height: 340px;
+}
+
+#secondaryFeaturedMount .card-media {
+  height: 145px;
+}
+
+@media (max-width: 991.98px) {
+  #featuredMount .featured-media {
+    height: 260px;
+  }
+
+  #secondaryFeaturedMount .card-media {
+    height: 200px;
+  }
+}
