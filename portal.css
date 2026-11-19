@@ -159,6 +159,8 @@
 /* Notícia principal */
 #featuredMount .featured-card {
   height: auto;
+  align-items: start;
+grid-template-columns: 1.2fr 1fr;
   overflow: hidden;
   border-radius: 14px;
   background: #ffffff;
@@ -173,7 +175,11 @@
 }
 
 #featuredMount .featured-content {
-  padding: 26px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 #featuredMount h3 {
@@ -248,8 +254,8 @@
 }
 
 #featuredMount .featured-media {
-  height: 100%;
-  min-height: 300px;
+    height: 340px;
+    min-height: 0;
 }
 
 #secondaryFeaturedMount .card-media {
