@@ -1,0 +1,273 @@
+
+/* NOTÍCIAS IPMO — Portal unificado
+   Bootstrap 5.2.3 + jQuery 3.6.0
+   Estilos exclusivos da página pública
+*/
+
+.portal-page {
+  background: #f4f7fa;
+  color: #173650;
+}
+
+.portal-page .container {
+  max-width: 1200px;
+}
+
+/* Cabeçalho institucional */
+.portal-header {
+  background: #062f54;
+  color: #ffffff;
+}
+
+.portal-brand {
+  min-height: 108px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.portal-logo {
+  display: block;
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+}
+
+.portal-title {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.portal-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.portal-actions a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.portal-actions a:hover {
+  color: #b8eaff;
+}
+
+/* Navegação */
+.portal-nav {
+  background: #0876ac;
+}
+
+.portal-nav .nav-link {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 14px 18px;
+}
+
+.portal-nav .nav-link:hover,
+.portal-nav .nav-link:focus {
+  color: #ffffff;
+  background: #065b87;
+}
+
+/* Títulos das seções */
+.portal-section-title {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #0876ac;
+}
+
+.portal-section-title h2 {
+  margin: 0;
+  color: #062f54;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+/* Cards de notícias */
+.portal-news-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #dce7ef;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.portal-news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(6,47,84,.12);
+}
+
+.portal-news-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.portal-news-card .card-body {
+  padding: 20px;
+}
+
+.portal-news-card h3 {
+  font-size: 19px;
+  line-height: 1.35;
+  color: #062f54;
+}
+
+/* Responsividade */
+@media (max-width: 767.98px) {
+  .portal-brand {
+    min-height: 84px;
+    gap: 12px;
+  }
+
+  .portal-logo {
+    width: 150px;
+  }
+
+  .portal-title {
+    font-size: 20px;
+  }
+
+  .portal-section-title h2 {
+    font-size: 22px;
+  }
+
+  .portal-news-card img {
+    height: 190px;
+  }
+}
+
+
+/* NOTÍCIAS IPMO — Destaques jornalísticos */
+
+#featuredLayout {
+  align-items: start;
+}
+
+#featuredMount,
+#secondaryFeaturedMount {
+  height: auto;
+}
+
+
+/* Notícia principal */
+#featuredMount .featured-card {
+  height: auto;
+  align-items: start;
+grid-template-columns: 1.2fr 1fr;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid #dce7ef;
+  box-shadow: 0 8px 24px rgba(6, 47, 84, 0.08);
+}
+
+#featuredMount .featured-media {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+#featuredMount .featured-content {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#featuredMount h3 {
+  font-size: 28px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+#featuredMount h3 a,
+#secondaryFeaturedMount h3 a {
+  color: #062f54;
+  text-decoration: none;
+}
+
+#featuredMount h3 a:hover,
+#secondaryFeaturedMount h3 a:hover {
+  color: #0876ac;
+}
+
+/* Duas notícias secundárias */
+#secondaryFeaturedMount {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+#secondaryFeaturedMount .portal-news-card {
+  display: flex;
+  flex-direction: column;
+}
+
+#secondaryFeaturedMount .card-media {
+  height: 145px;
+  object-fit: cover;
+}
+
+#secondaryFeaturedMount .card-body {
+  padding: 16px;
+}
+
+#secondaryFeaturedMount h3 {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+/* Celulares e tablets */
+@media (max-width: 991.98px) {
+  #featuredMount .featured-media {
+    height: 260px;
+  }
+
+  #featuredMount h3 {
+    font-size: 23px;
+  }
+
+  #secondaryFeaturedMount {
+    grid-template-rows: auto;
+  }
+
+  #secondaryFeaturedMount .card-media {
+    height: 200px;
+  }
+}
+
+/* Ajuste para imagens geradas como background */
+
+#featuredMount .featured-media,
+#secondaryFeaturedMount .card-media {
+  display: block;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#featuredMount .featured-media {
+    height: 340px;
+    min-height: 0;
+}
+
+#secondaryFeaturedMount .card-media {
+  height: 145px;
+}
+
+@media (max-width: 991.98px) {
+  #featuredMount .featured-media {
+    height: 260px;
+  }
+
+  #secondaryFeaturedMount .card-media {
+    height: 200px;
+  }
+}
